@@ -4,39 +4,35 @@
  * and open the template in the editor.
  */
 package entities;
-
+import java.util.ArrayList;
 /**
  *
  * @author durand
  */
 public class Orders {
-    private String name;
-    private int quantity;
-    private float price;
+    ArrayList <Item> ListItems = new ArrayList();
 
-    public String getName() {
-        return name;
+
+
+
+
+    public double getTotalPrice() {
+        double totalPrice = 0.0;
+        for(Item x: ListItems){
+            totalPrice += x.getTotalPrice();
+        }
+        return totalPrice;
+    }
+    
+    public void addItem(String type, int quantity){
+        if(type == "pizza"){
+            ListItems.add(new Pizza(quantity));
+        }else if(type == "refrigerante"){
+            ListItems.add(new Pizza(quantity));
+        }
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public float getPrice() {
-        return price;
-    }
-
-    public void setPrice(float price) {
-        this.price = price;
-    }
 
 
 }

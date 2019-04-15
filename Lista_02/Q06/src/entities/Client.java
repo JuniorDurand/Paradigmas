@@ -12,5 +12,9 @@ import entities.Client;
  */
 public class Client {
     String name;
-    ArrayList <Orders> requests = new ArrayList();
-}
+    Orders requests = new Orders();
+    
+    public double totalPerClient(){
+        return requests.getTotalPrice();
+    }
+ }

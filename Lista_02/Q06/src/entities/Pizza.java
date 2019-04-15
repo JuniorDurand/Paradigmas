@@ -9,6 +9,11 @@ package entities;
  *
  * @author durand
  */
-public class Pizza {
+public class Pizza extends Item {
+    public Pizza(int quant){
+        this.quantity = quant;
+        this.name = "Pizza";
+        this.price = 14.90;
+    }
     
 }

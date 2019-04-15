@@ -9,6 +9,12 @@ package entities;
  *
  * @author durand
  */
-public class Refrigerante {
+public class Refrigerante extends Item {
+
+    public Refrigerante(int quant) {
+        this.name = "refrigerante";
+        this.quantity = quant;
+        this.price = 4.99;
+    }
     
 }

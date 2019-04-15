@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package restaurant;
-import java.util.ArrayList;
+package entities;
+
 /**
  *
  * @author durand
  */
-public class Table {
-    ArrayList <Client> Clients = new ArrayList();
+public class Refrigerante {
     
 }

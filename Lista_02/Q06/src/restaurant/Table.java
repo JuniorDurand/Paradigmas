@@ -12,9 +12,15 @@ import java.util.ArrayList;
  */
 public class Table {
     int identifier;
-    ArrayList <Client> Clients = new ArrayList();
+    Scanner input = new Scanner(System.in);
+    ArrayList <Client> Clients;
     
-    
+    public Table(int ident){
+        this.identifier = ident;
+        Clients = new ArrayList();
+}
+
+
     public double bill(){// Conta total da mesa
         double bill = 0.0;
         for(Client x : Clients){
@@ -22,5 +28,24 @@ public class Table {
         }
         return bill;
     }
+    
+    public void addClient(String name){
+        Clients.add(new Client(name));
+    }
+    
+    public void printReportTable(){
+        Sistem.out.println("Mesa: "+this.identifier);
+        for(Client x : Clients){
+            x.printReportClient();
+        }
+    }
+
+    public void cadastrarPedido(){
+        String nome;
+        Sistem.out.println("Digite o nome do cliente");
+        nome = nextLine();
+
+    }
+
     
 }

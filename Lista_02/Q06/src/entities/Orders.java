@@ -31,6 +31,8 @@ public class Orders {
             ListItems.add(new Refrigerante(quantity));
         }else if(type == "torta"){
             ListItems.add(new Torta(quantity))
+        }else{
+            System.out.println("Pedido não encontrado no cardapio");
         }
     }
 
@@ -43,7 +45,13 @@ public class Orders {
         }
     }
     
-
+    public void printReportItems(){
+        for(Item x: ListItems){
+            for(Orders y : OrderList)
+                for( )
+            System.out.println(x.toString());
+        }
+    }
 
 
 

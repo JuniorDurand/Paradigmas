@@ -23,6 +23,10 @@ public class Item {
         return price;
     }
 
+    public double getQuantity() {
+        return quantity;
+    }
+
     public double getTotalPrice() {
         return quantity * price;
     }

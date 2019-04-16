@@ -28,9 +28,21 @@ public class Orders {
         if(type == "pizza"){
             ListItems.add(new Pizza(quantity));
         }else if(type == "refrigerante"){
-            ListItems.add(new Pizza(quantity));
+            ListItems.add(new Refrigerante(quantity));
+        }else if(type == "torta"){
+            ListItems.add(new Torta(quantity))
         }
     }
+
+    public void cancelItem(String type, int quantity){
+        for(Item x: ListItems){
+            if(x.getName == type && x.getQuantity() == quantity){
+                ListItems.remove(x);
+                break;
+            }
+        }
+    }
+    
 
 
 

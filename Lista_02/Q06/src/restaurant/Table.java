@@ -41,10 +41,35 @@ public class Table {
     }
 
     public void cadastrarPedido(){
-        String nome;
-        Sistem.out.println("Digite o nome do cliente");
-        nome = nextLine();
-
+        String clientName;
+        boolean flag = false;
+        clientName = nextLine();
+        for(Cleint x: Clients){
+            if(x.getName == clientName){
+                x.addRequests();
+                flag = true;
+                break;
+            }
+        }
+        if(!flag){
+            System.out.println("Cliente não encontrado");
+        }
+    }
+    
+    public void cancelarPedido(){
+        String clientName;
+        boolean flag = false;
+        clientName = nextLine();
+        for(Cleint x: Clients){
+            if(x.getName == clientName){
+                x.cancelRequests();
+                flag = true;
+                break;
+            }
+        }
+        if(!flag){
+            System.out.println("Cliente não encontrado");
+        }
     }
 
     

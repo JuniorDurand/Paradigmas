@@ -10,7 +10,7 @@ package entities;
  *
  * @author durand
  */
-public class Torta extends item{
+public class Torta extends Item{
    public Torta(int quant) {
         this.name = "torta";
         this.quantity = quant;

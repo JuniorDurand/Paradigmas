@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 package restaurant;
-
+import entities.*;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -13,32 +14,42 @@ import java.util.ArrayList;
  */
 public class Main {
     Scanner input = new Scanner(System.in);
-
+    ArrayList <Table> Tables = new ArrayList();
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        ArrayList <Table> Tables = new ArrayList();
-        int opcao;
+        Main prog = new Main();
+        int opcao = 0;
         do{
+            prog.menu();
             switch(opcao){
-                case 1:cadastrarMesa(); break;
-                case 2:
-
+                case 1:prog.cadastrarMesa(); break;
+                case 2:prog.cadastrarPedido();break;
+                case 3:prog.cancelarPedido();break;
+                case 4:prog.fecharMesa();break;
+                case 5:prog.printReportTotal();break;
+                case 6:break;
+                default: System.out.println("Digite uma opção valida");
             }
 
-        }while(opcao != 5);
+        }while(opcao != 6);
         
         
     }
 
+
+
+
+
     public void menu(){
         System.out.println("1 - cadastrar mesa");
         System.out.println("2 - cadastrar pedido");
-        System.out.println("3 - cancelar pedido mesa");
-        System.out.println("4 - Relatorio total");
-        System.out.println("5 - fechar");
+        System.out.println("3 - cancelar pedido");
+        System.out.println("4 - Fechar Mesa");
+        System.out.println("5 - Relatorio Total");
+        System.out.println("6 - Sair");
     }
     public void cadastrarMesa(){
         int ident;
@@ -53,7 +64,7 @@ public class Main {
                     System.out.println("Identificador invalido");
                 }
             }
-        }while(flag)
+        }while(flag);
         Tables.add(new Table(ident));
     }
     public void cadastrarPedido(){
@@ -72,7 +83,7 @@ public class Main {
             if(flag){
                 System.out.println("Mesa não encontrada");
             }
-        }while(flag)
+        }while(flag);
     }
 
     public void cancelarPedido(){
@@ -91,7 +102,7 @@ public class Main {
             if(flag){
                 System.out.println("Mesa não encontrada");
             }
-        }while(flag)
+        }while(flag);
     }
 
     public double fecharMesa(){
@@ -110,12 +121,12 @@ public class Main {
             if(flag){
                 System.out.println("Mesa não encontrada");
             }
-        }while(flag)
+        }while(flag);
+        return 0;
     }
     public void printReportTotal(){
         for(Table x: Tables){
             x.printReportTable();
         }
     }
-
 }

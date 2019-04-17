@@ -25,6 +25,10 @@ public class Client {
         return requests.getTotalPrice();
 
     }
+
+    public String getName(){
+        return name;
+    }
     
     public void addRequests(){
         String nameRequest;

@@ -4,8 +4,10 @@
  * and open the template in the editor.
  */
 package restaurant;
-import entities.Client;
+import entities.*;
 import java.util.ArrayList;
+import java.util.Scanner;
+
 /**
  *
  * @author durand
@@ -34,7 +36,7 @@ public class Table {
     }
     
     public void printReportTable(){
-        Sistem.out.println("Mesa: "+this.identifier);
+        System.out.println("Mesa: "+this.identifier);
         for(Client x : Clients){
             x.printReportClient();
         }
@@ -43,9 +45,9 @@ public class Table {
     public void cadastrarPedido(){
         String clientName;
         boolean flag = false;
-        clientName = nextLine();
-        for(Cleint x: Clients){
-            if(x.getName == clientName){
+        clientName = input.nextLine();
+        for(Client x: Clients){
+            if(x.getName() == clientName){
                 x.addRequests();
                 flag = true;
                 break;
@@ -59,9 +61,9 @@ public class Table {
     public void cancelarPedido(){
         String clientName;
         boolean flag = false;
-        clientName = nextLine();
-        for(Cleint x: Clients){
-            if(x.getName == clientName){
+        clientName = input.nextLine();
+        for(Client x: Clients){
+            if(x.getName() == clientName){
                 x.cancelRequests();
                 flag = true;
                 break;
